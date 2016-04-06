@@ -1,0 +1,120 @@
+//
+// Prefix header for all source files of the 'TimeSliceCam' target in the 'TimeSliceCam' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+
+
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+	#import <GameKit/GameKit.h>
+    #import "SVProgressHUD.h"
+    #import "UIScreen+is4inch.h"
+
+#ifdef DEBUG
+    #  define LOG(...) NSLog(__VA_ARGS__)
+    #  define LOG_METHOD NSLog(@"%@/%@", NSStringFromClass([self class]), NSStringFromSelector(_cmd))
+#else
+    #  define LOG(...)
+    #  define LOG_METHOD
+#endif
+
+#endif
+
+
+//----- Global Settings -----//
+
+typedef enum
+{
+	QuitReasonNoNetwork,          // no Wi-Fi or Bluetooth
+	QuitReasonConnectionDropped,  // communication failure with server
+	QuitReasonUserQuit,           // the user terminated the connection
+	QuitReasonServerQuit,         // the server quit the session (on purpose)
+} QuitReason;
+
+typedef enum {
+    RECORDING_TYPE_SEQUENCIAL,      //順次撮影
+    RECORDING_TYPE_SIMULTANEOUS     //同時撮影
+} RecordingType;
+
+//セッションに使うデバイスの組み合わせ
+typedef enum  {
+    ShootingMode_iPhone_iPhone,     //サーバー:iPhone/Touch クライアント:iPhone/Touch
+    ShootingMode_iPad_iPhone        //サーバー:iPad         クライアント:iPhone/Touch
+} ShootingMode;
+
+//GKSessionID
+#define kTimeSliceCamGKSessionID @"jp.co.bane.TimeSliceCam.session"
+
+//サーバー込みでBlutooth接続出来る最大の台数
+#define kMaxCients 15
+
+//順次撮影時(RECORDING_TYPE_SEQUENCIAL)のデバイス間の撮影間隔
+#define kRecordingInterval 0.1
+
+////クライアント1台あたりの撮影時間
+//#define SHOOTING_DURATION 0.1   //撮影の長さ
+
+//videoをscalingする際のCMTimeのvalue
+#define kScalingCMTimeValue 600
+
+//videoをscalingする際のCMTimeのtimeScaling
+#define kScalingCMTimeTimeScaling 600
+
+//写真をビデオに変換するCMtimeのValue
+#define kScalingPhotoToMovieValue 120
+
+//写真をビデオに変換するCMTimeのtimeScaling
+#define kScalingPhotoToMovieTimeScaling 600
+
+//videoをscalingする倍率
+#define kScalingRatio 10
+
+//AVCaptureSessionのプリセット
+//#define kVideoCapturingHostPreset       AVCaptureSessionPresetHigh
+#define kVideoCapturingHostPreset       AVCaptureSessionPreset1920x1080
+
+//#define kVideoCapturingClientPreset     AVCaptureSessionPresetHigh
+#define kVideoCapturingClientPreset     AVCaptureSessionPreset1920x1080
+
+
+//サーバーに送る写真の圧縮率
+#define kResultImagecompressionQuality 1.0
+
+//#define kImageFrameSize CGSizeMake(1280, 720)
+#define kImageFrameSize CGSizeMake(1920, 1080)
+
+
+// ---- ダイアログのメッセージ ----
+#define kMessageConnectingToServer NSLocalizedString(@"Connecting To Server", @"Connecting Server Dialog")
+#define kMessageReceivingPhotoData NSLocalizedString(@"Receiving Photo Data", @"Receiving Photo Data Dialog")
+#define kMessageReceivedUnexpectedData NSLocalizedString(@"Received Unexpected Data From Client", @"Received Unexpected Data Dialog")
+#define kMessageSendPhotoDataToServer NSLocalizedString(@"Sending Photo Data To Server", @"Sending Photo Data To Server Dialog")
+#define kMessageSendPhotoDataToServerFailed NSLocalizedString(@"Failed To Sending Photo Data To Server", @"Failed To Sending Photo Data To Server Dialog")
+#define kMessageSendPhotoDataToServerSucceed NSLocalizedString(@"Successful Data Transmission.This Shooting Session is Finished", @"Photo Data Send SucceedDialog")
+#define kMessageSavingPhotoDataToLibrary NSLocalizedString(@"Saving Photos To Photo Library", @"Saving Photos To Photo Library Dialog")
+#define kMessageLoadingPhotoDataFromLibrary NSLocalizedString(@"Loding Photos From Library", @"Loding Photos From Library Dialog")
+#define kMessageEncodingMovie NSLocalizedString(@"Encoding Photos To Movie", @"Encoding Photos To Movie Dialog")
+#define kMessageEncodingMovieFailed NSLocalizedString(@"Failed To Encoding Movie", @"Failed To Encoding Movie Dialog")
+#define kMessageMergingMovie NSLocalizedString(@"Merging Movie", @"Merging Movie Dialog")
+#define kMessageLoadingYouTubeCategory NSLocalizedString(@"Fetching Youtube Category", @"Fetching Youtube Category")
+
+// --- Googgle --
+#define GoogleClientID @"564714596798.apps.googleusercontent.com"
+#define GoogleClientSecret @"XxoaJBxtaM-xYGTJoQ9sSZbv"
+#define GoogleKeyChainName @"googleKeychain"
+#define YouTubeDeveloperKey @"AI39si75cl39ASPAKEka3GJqi927ux55t3KwdCKOdKHws_piK9g4eC6iYt8PHnMvR2jkkBtEuaF0H29yntqLPcJwIfAWYRNWNA"
+
+// --- Nend Ad(テストID)
+//#define NendID @"a6eca9dd074372c898dd1df549301f277c53f2b9"
+//#define NendSpotID @"3172"
+
+// --- Nend Ad(本番ID)
+#define NendID @"8de40d9001b838ab50ba4c498cc3a184c29c70e7"
+#define NendSpotID @"45340"

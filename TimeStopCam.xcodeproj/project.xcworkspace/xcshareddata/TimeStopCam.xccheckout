@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9324130E-253B-4A94-AF8F-0E3C617B46E1</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TimeStopCam</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9FC84FE0-C3CB-471D-88E8-C2F7E914EBE3</key>
+		<string>file:///Users/akabanetakeaki/svn/iPhone/TimeSliceCam</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TimeStopCam.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9FC84FE0-C3CB-471D-88E8-C2F7E914EBE3</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>9FC84FE0-C3CB-471D-88E8-C2F7E914EBE3</key>
+		<string>file:///Users/akabanetakeaki/svn/iPhone</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>file:///Users/akabanetakeaki/svn/iPhone/TimeSliceCam/TimeStopCam.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9FC84FE0-C3CB-471D-88E8-C2F7E914EBE3</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9FC84FE0-C3CB-471D-88E8-C2F7E914EBE3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TimeSliceCam</string>
+		</dict>
+	</array>
+</dict>
+</plist>
